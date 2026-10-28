@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+body { @apply bg-night text-slate-300 font-sans antialiased; }
+h1, h2, h3 { @apply font-display text-white; }
+:focus-visible { outline: 2px solid #2dd4bf; outline-offset: 3px; border-radius: 6px; }
+
+.bg-glow {
+  background:
+    radial-gradient(60rem 30rem at 85% -10%, rgba(139,123,255,.18), transparent 60%),
+    radial-gradient(40rem 25rem at 0% 20%, rgba(45,212,191,.09), transparent 60%);
+}
+@keyframes pulse-node { 0%,100% { opacity: .45 } 50% { opacity: 1 } }
+.node { animation: pulse-node 3.6s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .node { animation: none; }
+  * { transition: none !important; }
+}
